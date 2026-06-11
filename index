@@ -1,0 +1,787 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festi'Run 2027 | Course solidaire et inclusive</title>
+<meta name="description" content="Participez au Festi'Run 2027 le 13 juin 2027 au Bois de Vincennes. Une journée sportive, festive et inclusive organisée par APF France handicap.">
+
+<style>
+:root{
+    --rose:#e5007e;
+    --bleu:#00a0df;
+    --bleu-fonce:#183153;
+    --gris:#f5f7fa;
+    --texte:#2b2b2b;
+    --blanc:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--texte);
+    background:var(--gris);
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+    color:var(--bleu-fonce);
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    background:var(--rose);
+    color:white;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    background:
+    linear-gradient(rgba(24,49,83,.65),rgba(24,49,83,.65)),
+    url("hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero img{
+    max-width:180px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    max-width:900px;
+    margin:auto;
+}
+
+.hero-meta{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.meta{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    padding:15px 25px;
+    border-radius:12px;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.time{
+    background:white;
+    color:var(--bleu-fonce);
+    width:120px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.time strong{
+    display:block;
+    font-size:2rem;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat{
+    background:white;
+    text-align:center;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat-number{
+    font-size:3rem;
+    font-weight:700;
+    color:var(--rose);
+}
+
+/* WHY */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+/* PARCOURS */
+
+.parcours{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.parcours-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    border-top:8px solid var(--rose);
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:var(--bleu);
+}
+
+.timeline-item{
+    margin-left:60px;
+    margin-bottom:30px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    position:relative;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--rose);
+    left:-49px;
+    top:22px;
+}
+
+/* ACTIVITES */
+
+.activities{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.activity{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* VIDEO */
+
+.video{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.video iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* MAP */
+
+.map{
+    position:relative;
+    padding-bottom:45%;
+    height:0;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.map iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* FORM */
+
+.form-section{
+    background:linear-gradient(135deg,var(--rose),var(--bleu));
+    color:white;
+}
+
+.form-card{
+    background:white;
+    color:black;
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+}
+
+form{
+    display:grid;
+    gap:18px;
+}
+
+input,
+select{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+button{
+    background:var(--rose);
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.checkbox{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+}
+
+.success{
+    display:none;
+    margin-top:20px;
+    background:#e8f7ec;
+    color:#156c2f;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--bleu-fonce);
+    color:white;
+    padding:50px 0;
+}
+
+footer a{
+    color:white;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.time{
+    width:90px;
+}
+
+.time strong{
+    font-size:1.5rem;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<img src="logo.png" alt="Logo Festi'Run">
+
+<h1>Festi'Run 2027</h1>
+
+<p>
+Le grand rendez-vous sportif, festif et inclusif organisé par APF France handicap.
+Courez, marchez, découvrez le sport inclusif et partagez une journée unique.
+</p>
+
+<div class="hero-meta">
+
+<div class="meta">
+📅 13 juin 2027
+</div>
+
+<div class="meta">
+📍 Bois de Vincennes
+</div>
+
+<div class="meta">
+🏃 4 parcours
+</div>
+
+</div>
+
+<div class="countdown">
+
+<div class="time">
+<strong id="days">0</strong>
+Jours
+</div>
+
+<div class="time">
+<strong id="hours">0</strong>
+Heures
+</div>
+
+<div class="time">
+<strong id="minutes">0</strong>
+Minutes
+</div>
+
+<div class="time">
+<strong id="seconds">0</strong>
+Secondes
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<div class="stat-number">1500+</div>
+Participants
+</div>
+
+<div class="stat">
+<div class="stat-number">4</div>
+Parcours
+</div>
+
+<div class="stat">
+<div class="stat-number">20+</div>
+Animations
+</div>
+
+<div class="stat">
+<div class="stat-number">100%</div>
+Inclusif
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Pourquoi participer ?</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Courir ou marcher</h3>
+<p>Des parcours adaptés à tous les niveaux.</p>
+</div>
+
+<div class="feature">
+<h3>Découvrir le sport inclusif</h3>
+<p>Des animations accessibles tout au long de la journée.</p>
+</div>
+
+<div class="feature">
+<h3>Soutenir une cause</h3>
+<p>Participer à une société plus inclusive.</p>
+</div>
+
+<div class="feature">
+<h3>Partager un moment convivial</h3>
+<p>Entre amis, en famille ou entre collègues.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Les parcours</h2>
+
+<div class="parcours">
+
+<div class="parcours-card">
+<h3>3 km</h3>
+<p>Découverte marche ou course</p>
+</div>
+
+<div class="parcours-card">
+<h3>5 km</h3>
+<p>Solidaire marche ou course</p>
+</div>
+
+<div class="parcours-card">
+<h3>10 km</h3>
+<p>Loisir non chronométré</p>
+</div>
+
+<div class="parcours-card">
+<h3>10 km</h3>
+<p>Chronométré</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Programme de la journée</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">07h30 • Ouverture du village Festi'Run</div>
+<div class="timeline-item">08h00 • Retrait des dossards</div>
+<div class="timeline-item">08h30 • Échauffement collectif</div>
+<div class="timeline-item">10h00 • Départ du 10 km chronométré</div>
+<div class="timeline-item">10h10 • Départ du 5 km</div>
+<div class="timeline-item">10h20 • Départ du 3 km</div>
+<div class="timeline-item">12h00 • Remise des récompenses</div>
+<div class="timeline-item">13h30 • Clôture</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Village inclusif</h2>
+
+<div class="activities">
+
+<div class="activity">Tennis fauteuil</div>
+<div class="activity">Basket fauteuil</div>
+<div class="activity">Drone soccer</div>
+<div class="activity">Biathlon adapté</div>
+<div class="activity">Joëlettes</div>
+<div class="activity">Sensibilisation au handicap</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Galerie photos</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg" alt="">
+<img src="photo2.jpg" alt="">
+<img src="photo3.jpg" alt="">
+<img src="photo4.jpg" alt="">
+<img src="photo5.jpg" alt="">
+<img src="photo6.jpg" alt="">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Vidéo de l'édition 2025</h2>
+
+<div class="video">
+
+<iframe src="https://www.youtube.com/embed/kiZs5OwgMgs" allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Accès</h2>
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Chateau%20de%20Vincennes&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Documents utiles</h2>
+
+<div style="text-align:center;">
+<a href="programme.pdf" class="btn">Télécharger le programme</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="form-section" id="inscription">
+
+<div class="container">
+
+<h2>Inscription</h2>
+
+<div class="form-card">
+
+<form id="registrationForm">
+
+<input type="text" placeholder="Nom" required>
+
+<input type="text" placeholder="Prénom" required>
+
+<select required>
+<option value="">Genre</option>
+<option>Femme</option>
+<option>Homme</option>
+<option>Non-binaire</option>
+<option>Autre</option>
+</select>
+
+<input type="tel" placeholder="Téléphone" required>
+
+<label class="checkbox">
+<input type="checkbox" required>
+<span>
+J'accepte que les informations saisies soient utilisées dans le cadre de la gestion de mon inscription au Festi'Run 2027.
+</span>
+</label>
+
+<label class="checkbox">
+<input type="checkbox">
+<span>
+J'accepte de recevoir les actualités d'APF France handicap.
+</span>
+</label>
+
+<button type="submit">
+Valider mon inscription
+</button>
+
+</form>
+
+<div class="success" id="success">
+Votre inscription a bien été enregistrée.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>Contact</h3>
+<p>
+festirun@apf.asso.fr<br>
+01 40 78 27 06<br>
+17 boulevard Auguste Blanqui<br>
+75013 Paris
+</p>
+</div>
+
+<div>
+<h3>Informations légales</h3>
+<p>
+<a href="https://www.apf-francehandicap.org/politique-confidentialite">Politique de confidentialité</a><br>
+<a href="https://www.apf-francehandicap.org/mentions-legales">Mentions légales</a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+const targetDate = new Date("2027-06-13T07:30:00").getTime();
+
+function countdown() {
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+if(distance < 0) return;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+}
+
+setInterval(countdown,1000);
+countdown();
+
+document.getElementById("registrationForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("success").style.display="block";
+
+this.reset();
+
+});
+</script>
+
+</body>
+</html>
+```
