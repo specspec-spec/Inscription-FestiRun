@@ -1,0 +1,620 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Festi'Run 2027 | Course solidaire et inclusive à Vincennes</title>
+
+<meta name="description" content="Participez au Festi'Run 2027 le 13 juin 2027 au Bois de Vincennes. Une journée sportive, solidaire et inclusive organisée par APF France handicap.">
+
+<meta property="og:title" content="Festi'Run 2027">
+<meta property="og:description" content="Le rendez-vous sportif, solidaire et inclusif organisé par APF France handicap.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Event",
+  "name":"Festi'Run 2027",
+  "startDate":"2027-06-13T07:30:00+02:00",
+  "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus":"https://schema.org/EventScheduled",
+  "location":{
+    "@type":"Place",
+    "name":"Bois de Vincennes - Esplanade Saint-Louis",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Avenue de Paris",
+      "postalCode":"94300",
+      "addressLocality":"Vincennes",
+      "addressCountry":"FR"
+    }
+  },
+  "organizer":{
+    "@type":"Organization",
+    "name":"APF France handicap"
+  }
+}
+</script>
+
+<style>
+:root{
+    --primary:#e5007e;
+    --secondary:#00a0df;
+    --dark:#1f2937;
+    --light:#ffffff;
+    --background:#f5f7fa;
+    --border:#dbe2ea;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--dark);
+    background:var(--background);
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+}
+
+.hero{
+    text-align:center;
+    padding:3rem 0;
+}
+
+.hero img{
+    max-width:180px;
+    height:auto;
+    margin-bottom:1.5rem;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:.75rem;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+.event-meta{
+    margin-top:2rem;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    flex-wrap:wrap;
+}
+
+.meta-card{
+    background:#fff;
+    border-radius:12px;
+    padding:1rem 1.5rem;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.countdown{
+    margin-top:2rem;
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:var(--primary);
+    color:#fff;
+    min-width:110px;
+    padding:1rem;
+    border-radius:10px;
+}
+
+.time-box span{
+    display:block;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+section{
+    padding:4rem 0;
+}
+
+.card{
+    background:#fff;
+    padding:2rem;
+    border-radius:16px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+h2{
+    margin-bottom:1.5rem;
+    color:var(--dark);
+}
+
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+details{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:1rem;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    padding:1rem;
+    font-weight:bold;
+}
+
+details div{
+    padding:0 1rem 1rem;
+}
+
+ul{
+    padding-left:1.2rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.downloads{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.video-wrapper,
+.map-wrapper{
+    position:relative;
+    overflow:hidden;
+    border-radius:16px;
+    padding-bottom:56.25%;
+    height:0;
+}
+
+.video-wrapper iframe,
+.map-wrapper iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+form{
+    display:grid;
+    gap:1rem;
+}
+
+label{
+    font-weight:600;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+}
+
+.checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:.75rem;
+}
+
+.checkbox input{
+    width:auto;
+    margin-top:4px;
+}
+
+button{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.success{
+    display:none;
+    margin-top:1rem;
+    padding:1rem;
+    background:#e8f8ed;
+    border:1px solid #28a745;
+    border-radius:8px;
+}
+
+footer{
+    background:#1f2937;
+    color:#fff;
+    padding:2rem 0;
+}
+
+footer a{
+    color:#fff;
+}
+
+footer p{
+    margin-bottom:.75rem;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.time-box{
+    min-width:90px;
+}
+
+.time-box span{
+    font-size:1.5rem;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container hero">
+
+        <img src="logo.png" alt="Logo Festi'Run 2027">
+
+        <h1>Festi'Run 2027</h1>
+
+        <p>
+            Le rendez-vous sportif, solidaire et inclusif organisé par APF France handicap.
+            Venez courir, marcher, participer aux animations et soutenir une société plus inclusive.
+        </p>
+
+        <div class="event-meta">
+
+            <div class="meta-card">
+                <strong>Date</strong><br>
+                13 juin 2027
+            </div>
+
+            <div class="meta-card">
+                <strong>Lieu</strong><br>
+                Bois de Vincennes
+            </div>
+
+            <div class="meta-card">
+                <strong>Adresse</strong><br>
+                Esplanade Saint-Louis, Vincennes
+            </div>
+
+        </div>
+
+        <div class="countdown" aria-label="Compte à rebours">
+
+            <div class="time-box">
+                <span id="days">0</span>
+                Jours
+            </div>
+
+            <div class="time-box">
+                <span id="hours">0</span>
+                Heures
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">0</span>
+                Minutes
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">0</span>
+                Secondes
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+<section>
+    <div class="container">
+        <div class="card intro">
+
+            <h2>À propos du Festi'Run</h2>
+
+            <p>
+                Le Festi'Run rassemble chaque année des milliers de participants autour
+                d'un événement sportif, festif et inclusif. Accessible à tous, il propose
+                plusieurs parcours de course ou de marche, un village d'animations et des
+                activités de sensibilisation au handicap.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Programme prévisionnel</h2>
+
+        <details>
+            <summary>Matinée</summary>
+            <div>
+                <ul>
+                    <li>07h30 : ouverture du village Festi'Run</li>
+                    <li>08h00 : retrait des derniers dossards</li>
+                    <li>08h30 : échauffement collectif</li>
+                    <li>09h45 : rassemblement sur les zones de départ</li>
+                    <li>10h00 : départ du 10 km chronométré</li>
+                    <li>10h10 : départ du 5 km marche ou course</li>
+                    <li>10h20 : départ du 3 km marche ou course</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Village inclusif et animations</summary>
+            <div>
+                <ul>
+                    <li>Tennis fauteuil</li>
+                    <li>Basket fauteuil</li>
+                    <li>Biathlon adapté</li>
+                    <li>Drone soccer</li>
+                    <li>Découverte des joëlettes</li>
+                    <li>Ateliers de sensibilisation</li>
+                    <li>Quiz et défis participatifs</li>
+                    <li>Espace détente et restauration</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Clôture</summary>
+            <div>
+                <ul>
+                    <li>11h30 : prises de parole partenaires et association</li>
+                    <li>12h00 : remise des récompenses</li>
+                    <li>13h30 : clôture de l'événement</li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Téléchargement</h2>
+
+        <div class="downloads">
+            <a class="btn" href="programme.pdf" target="_blank">
+                Télécharger le programme
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Vidéo de l'édition 2025</h2>
+
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/kiZs5OwgMgs"
+                title="Vidéo Festi'Run"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Accès</h2>
+
+        <div class="map-wrapper">
+            <iframe
+                src="https://maps.google.com/maps?q=Chateau%20de%20Vincennes&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Carte d'accès">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<section id="inscription">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Inscription</h2>
+
+            <form id="registrationForm">
+
+                <div>
+                    <label for="nom">Nom</label>
+                    <input id="nom" type="text" required>
+                </div>
+
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" type="text" required>
+                </div>
+
+                <div>
+                    <label for="genre">Genre</label>
+                    <select id="genre" required>
+                        <option value="">Sélectionner</option>
+                        <option>Femme</option>
+                        <option>Homme</option>
+                        <option>Non-binaire</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="telephone">Téléphone</label>
+                    <input id="telephone" type="tel" required>
+                </div>
+
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    <span>
+                        J'accepte que les informations saisies soient utilisées dans le cadre
+                        de la gestion de mon inscription au Festi'Run 2027, conformément à la
+                        politique de confidentialité.
+                    </span>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span>
+                        J'accepte de recevoir les actualités et informations relatives aux actions
+                        d'APF France handicap.
+                    </span>
+                </label>
+
+                <button type="submit">
+                    Valider mon inscription
+                </button>
+
+            </form>
+
+            <div id="success" class="success">
+                Votre inscription a bien été enregistrée.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="container">
+
+        <p><strong>Festi'Run</strong></p>
+
+        <p>
+            Email : festirun@apf.asso.fr<br>
+            Téléphone : 01 40 78 27 06<br>
+            Adresse : 17 boulevard Auguste Blanqui, 75013 Paris
+        </p>
+
+        <p>
+            <a href="https://www.apf-francehandicap.org/politique-confidentialite">
+                Politique de confidentialité
+            </a>
+            |
+            <a href="https://www.apf-francehandicap.org/mentions-legales">
+                Mentions légales
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+const targetDate = new Date("2027-06-13T07:30:00").getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if(distance <= 0){
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("success").style.display = "block";
+
+    this.reset();
+
+    window.scrollTo({
+        top: document.getElementById("success").offsetTop - 150,
+        behavior: "smooth"
+    });
+
+});
+</script>
+
+</body>
+</html>
+```
